@@ -1,0 +1,50 @@
+<section class="products-input">
+  <!-- Title -->
+  <div class="products-input_title">
+    <h3>Wybór produktów</h3>
+    <button type="button" class="products-input_toggle">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-chevron-down"
+      >
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+  </div>
+  <!-- Content -->
+  <div class="products-input_content">
+    <button
+      type="button"
+      class="products-input_item"
+      *ngFor="let product of products; trackBy: trackById"
+    >
+      {{ product.name }}
+      <span class="products-input_item-desc">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-help-circle"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+      </span>
+    </button>
+  </div>
+</section>
