@@ -1,5 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/cdk/overlay-prebuilt.css';
+
 :root {
+  --body-bg: #fff;
   --body-color: #4b4e57;
   --border-radius: 10px;
   --border-radius-sm: 6px;
@@ -11,5 +13,6 @@
 body {
   font-family: sans-serif;
   font-size: 18px;
+  background: var(--body-bg);
   color: var(--body-color);
 }
