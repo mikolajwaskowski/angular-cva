@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Product } from './app.models';
 
 @Component({
@@ -8,6 +9,10 @@ import { Product } from './app.models';
 })
 export class AppComponent {
   title = 'DECERTO';
+
+  form = this.fb.group({
+    product: [],
+  });
 
   products: Product[] = [
     {
@@ -41,4 +46,6 @@ export class AppComponent {
       description: 'Najlepszy produkt 6',
     },
   ];
+
+  constructor(private fb: FormBuilder) {}
 }

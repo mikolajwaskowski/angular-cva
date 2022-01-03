@@ -1,8 +1,11 @@
 <div class="content">
   <span>{{ title }}</span>
-  <form class="form">
+  <form [formGroup]="form" class="form">
     <span class="placeholder"></span>
-    <app-products-input [products]="products"></app-products-input>
+    <app-products-input
+      [products]="products"
+      formControlName="product"
+    ></app-products-input>
     <span class="placeholder"></span>
     <span class="placeholder"></span>
   </form>

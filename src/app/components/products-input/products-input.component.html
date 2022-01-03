@@ -22,9 +22,11 @@
   <!-- Content -->
   <div class="products-input_content">
     <button
+      *ngFor="let product of products; trackBy: trackById"
       type="button"
       class="products-input_item"
-      *ngFor="let product of products; trackBy: trackById"
+      [class.products-input_item--active]="product.id == _value?.id"
+      (click)="onProductClick(product)"
     >
       {{ product.name }}
       <span class="products-input_item-desc" [appTooltip]="product.description">
