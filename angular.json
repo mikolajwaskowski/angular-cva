@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "decerto-angular-cva": {
+    "angular-cva": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/decerto-angular-cva",
+            "outputPath": "dist/angular-cva",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "decerto-angular-cva:build:production"
+              "browserTarget": "angular-cva:build:production"
             },
             "development": {
-              "browserTarget": "decerto-angular-cva:build:development"
+              "browserTarget": "angular-cva:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "decerto-angular-cva:build"
+            "browserTarget": "angular-cva:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "decerto-angular-cva"
+  "defaultProject": "angular-cva"
 }

@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/decerto-angular-cva'),
+      dir: require('path').join(__dirname, './coverage/angular-cva'),
       subdir: '.',
       reporters: [
         { type: 'html' },
