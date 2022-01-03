@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { ProductsInputComponent } from './components/products-input/products-input.component';
@@ -6,7 +7,7 @@ import { ProductsInputComponent } from './components/products-input/products-inp
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, ReactiveFormsModule],
       declarations: [AppComponent, ProductsInputComponent],
     }).compileComponents();
   });
