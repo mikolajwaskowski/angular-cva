@@ -15,15 +15,21 @@ import { Product } from 'src/app/app.models';
   ],
 })
 export class ProductsInputComponent implements ControlValueAccessor {
+  showProducts = true;
   _value: Product | null = null;
 
   @Input() products: Product[] = [];
 
-  private _onChange(_: Product) {}
-  private _onTouched(_: Product) {}
+  _onChange(_: Product) {}
+  _onTouched(_: Product) {}
+
+  onToggleClick(): void {
+    this.showProducts = !this.showProducts;
+  }
 
   onProductClick(value: Product): void {
     this._value = value;
+    this._onChange(value);
   }
 
   writeValue(value: Product): void {

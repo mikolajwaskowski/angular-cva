@@ -25,6 +25,10 @@
   padding: 0.6rem 1rem;
   line-height: 1;
   margin-left: 1rem;
+
+  > svg {
+    transition: transform 0.1s;
+  }
 }
 
 .products-input_content {
@@ -64,4 +68,8 @@
   padding: 0.3rem 0.6rem;
   opacity: 0.6;
   line-height: 1;
+}
+
+.products-input_select {
+  display: none;
 }
