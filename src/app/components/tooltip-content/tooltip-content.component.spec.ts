@@ -8,9 +8,8 @@ describe('TooltipContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TooltipContentComponent ]
-    })
-    .compileComponents();
+      declarations: [TooltipContentComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +20,13 @@ describe('TooltipContentComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render text', () => {
+    const fixture = TestBed.createComponent(TooltipContentComponent);
+    fixture.componentInstance.text = 'Test 1';
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('div')?.textContent).toContain('Test 1');
   });
 });

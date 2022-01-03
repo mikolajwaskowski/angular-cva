@@ -8,7 +8,7 @@ import { Product } from './app.models';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'DECERTO';
+  title = 'FORMULARZ';
 
   form = this.fb.group({
     product: [],
@@ -48,4 +48,8 @@ export class AppComponent {
   ];
 
   constructor(private fb: FormBuilder) {}
+
+  onModelChange(product: Product): void {
+    console.log(product);
+  }
 }

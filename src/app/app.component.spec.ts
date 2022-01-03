@@ -1,14 +1,16 @@
+import { OverlayModule } from '@angular/cdk/overlay';
 import { TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { ProductsInputComponent } from './components/products-input/products-input.component';
+import { TooltipDirective } from './directives/tooltip/tooltip.directive';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, ReactiveFormsModule],
-      declarations: [AppComponent, ProductsInputComponent],
+      imports: [RouterTestingModule, ReactiveFormsModule, OverlayModule],
+      declarations: [AppComponent, ProductsInputComponent, TooltipDirective],
     }).compileComponents();
   });
 
@@ -18,10 +20,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'DECERTO'`, () => {
+  it(`should have as title 'FORMULARZ'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('DECERTO');
+    expect(app.title).toEqual('FORMULARZ');
   });
 
   it('should render title', () => {
@@ -29,7 +31,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'DECERTO'
+      'FORMULARZ'
     );
   });
 });

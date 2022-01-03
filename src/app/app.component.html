@@ -1,11 +1,19 @@
 <div class="content">
+  <!-- Title -->
   <span>{{ title }}</span>
+
   <form [formGroup]="form" class="form">
+    <!-- Placeholder that imits other form controls -->
     <span class="placeholder"></span>
+
+    <!-- Products CVA input  -->
     <app-products-input
       [products]="products"
       formControlName="product"
+      (ngModelChange)="onModelChange($event)"
     ></app-products-input>
+
+    <!-- Placeholders -->
     <span class="placeholder"></span>
     <span class="placeholder"></span>
   </form>
