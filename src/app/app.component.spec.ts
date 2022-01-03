@@ -4,6 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { ChevronIconComponent } from './components/icons/chevron/chevron.component';
+import { QuestionIconComponent } from './components/icons/question/question.component';
+import { ProductsInputItemComponent } from './components/products-input-item/products-input-item.component';
 import { ProductsInputComponent } from './components/products-input/products-input.component';
 import { TooltipDirective } from './directives/tooltip/tooltip.directive';
 
@@ -14,8 +16,10 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         ProductsInputComponent,
+        ProductsInputItemComponent,
         TooltipDirective,
         ChevronIconComponent,
+        QuestionIconComponent,
       ],
     }).compileComponents();
   });
