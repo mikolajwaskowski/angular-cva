@@ -7,51 +7,16 @@
       type="button"
       class="products-input_toggle"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        [ngStyle]="{ transform: showProducts ? 'rotate(180deg)' : 'rotate(0)' }"
-      >
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
+      <app-chevron [opened]="showProducts"></app-chevron>
     </button>
   </header>
   <!-- Content -->
   <div *ngIf="showProducts" id="content" class="products-input_content">
-    <!-- Products items -->
-    <button
+    <app-products-input-item
       *ngFor="let product of products; trackBy: trackById"
-      type="button"
-      class="products-input_item"
-      [class.products-input_item--active]="product.id == _value?.id"
+      [product]="product"
+      [isActive]="product.id === _value?.id"
       (click)="onProductClick(product)"
-    >
-      {{ product.name }}
-      <span class="products-input_item-desc" [appTooltip]="product.description">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          style="pointer-events: none"
-        >
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-          <line x1="12" y1="17" x2="12.01" y2="17"></line>
-        </svg>
-      </span>
-    </button>
+    ></app-products-input-item>
   </div>
 </section>

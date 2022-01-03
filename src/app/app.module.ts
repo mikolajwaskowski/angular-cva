@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { ProductsInputComponent } from './components/products-input/products-input.component';
 import { TooltipDirective } from './directives/tooltip/tooltip.directive';
 import { TooltipContentComponent } from './components/tooltip-content/tooltip-content.component';
+import { ChevronIconComponent } from './components/icons/chevron/chevron.component';
+import { QuestionIconComponent } from './components/icons/question/question.component';
+import { ProductsInputItemComponent } from './components/products-input-item/products-input-item.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { TooltipContentComponent } from './components/tooltip-content/tooltip-co
     ProductsInputComponent,
     TooltipDirective,
     TooltipContentComponent,
+    ChevronIconComponent,
+    QuestionIconComponent,
+    ProductsInputItemComponent,
   ],
   imports: [
     BrowserModule,

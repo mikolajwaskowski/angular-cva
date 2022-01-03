@@ -1,0 +1,6 @@
+<button *ngIf="product" type="button" [class.active]="isActive">
+  {{ product.name }}
+  <span class="desc" [appTooltip]="product.description">
+    <app-question></app-question>
+  </span>
+</button>

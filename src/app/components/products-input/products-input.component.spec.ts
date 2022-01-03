@@ -2,6 +2,9 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Product } from 'src/app/app.models';
 import { TooltipDirective } from 'src/app/directives/tooltip/tooltip.directive';
+import { ChevronIconComponent } from '../icons/chevron/chevron.component';
+import { QuestionIconComponent } from '../icons/question/question.component';
+import { ProductsInputItemComponent } from '../products-input-item/products-input-item.component';
 import { TooltipContentComponent } from '../tooltip-content/tooltip-content.component';
 
 import { ProductsInputComponent } from './products-input.component';
@@ -27,8 +30,11 @@ describe('ProductsInputComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [
         ProductsInputComponent,
+        ProductsInputItemComponent,
         TooltipDirective,
         TooltipContentComponent,
+        ChevronIconComponent,
+        QuestionIconComponent,
       ],
       imports: [OverlayModule],
     }).compileComponents();
@@ -59,8 +65,7 @@ describe('ProductsInputComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     products.forEach((product, index) => {
       expect(
-        compiled.querySelector(`#content button:nth-child(${index + 1})`)
-          ?.textContent
+        compiled.querySelectorAll('#content button')[index]?.textContent
       ).toContain(product.name);
     });
   });
@@ -96,12 +101,9 @@ describe('ProductsInputComponent', () => {
     fixture.componentInstance.onProductClick(products[1]);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('#content button.active')).toBeTruthy();
     expect(
-      compiled.querySelector('#content button.products-input_item--active')
-    ).toBeTruthy();
-    expect(
-      compiled.querySelector('#content button.products-input_item--active')
-        ?.textContent
+      compiled.querySelector('#content button.active')?.textContent
     ).toContain(products[1].name);
   });
 });

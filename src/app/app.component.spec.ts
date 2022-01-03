@@ -3,6 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { ChevronIconComponent } from './components/icons/chevron/chevron.component';
 import { ProductsInputComponent } from './components/products-input/products-input.component';
 import { TooltipDirective } from './directives/tooltip/tooltip.directive';
 
@@ -10,7 +11,12 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule, ReactiveFormsModule, OverlayModule],
-      declarations: [AppComponent, ProductsInputComponent, TooltipDirective],
+      declarations: [
+        AppComponent,
+        ProductsInputComponent,
+        TooltipDirective,
+        ChevronIconComponent,
+      ],
     }).compileComponents();
   });
 
